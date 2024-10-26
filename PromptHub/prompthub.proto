@@ -1,0 +1,60 @@
+syntax = "proto3";
+
+package PB;
+
+message AddRequest {
+  string Name = 1;
+  string Prompt = 2;
+}
+
+message AddResponse {
+  string AddOutput = 1;
+}
+
+message UpdateRequest {
+  string Name = 1;
+  string NewPrompt = 2;
+}
+
+message UpdateResponse {
+  string UpdateOutput = 1;
+}
+
+message DeleteRequest {
+  string Name = 1;
+}
+
+message DeleteResponse {
+  string DeleteOutput = 1;
+}
+
+message GetRequest {
+  string Name = 1;
+}
+
+message GetResponse {
+  string GetOutput = 1;
+}
+
+message ListRequest {}
+
+message ListResponse {
+  string ListOutput = 1;
+}
+
+message SelectRequest {
+  string Number = 1;
+}
+
+message SelectResponse {
+  string SelectOutput = 1;
+}
+
+service simple {
+  rpc add (AddRequest) returns (AddResponse) {}
+  rpc update (UpdateRequest) returns (UpdateResponse) {}
+  rpc delete (DeleteRequest) returns (DeleteResponse) {}
+  rpc get (GetRequest) returns (GetResponse) {}
+  rpc list (ListRequest) returns (ListResponse) {}
+  rpc select (SelectRequest) returns (SelectResponse) {}
+}
