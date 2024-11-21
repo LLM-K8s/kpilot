@@ -9,8 +9,9 @@ import logging
 from LLM.infrastructure.grpc.server import AIServiceServer
 from LLM.infrastructure.ai_providers.openai_provider import OpenAIProvider
 from LLM.infrastructure.ai_providers.ollama_provider import OllamaProvider
-from LLM.application.services import AIGatewayService
 from LLM.infrastructure.grpc import ai_service_pb2_grpc
+from LLM.application.services import AIGatewayService
+
 
 async def create_server(
     providers: Dict[str, str],

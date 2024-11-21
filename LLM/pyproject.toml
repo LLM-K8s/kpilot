@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "llm"
+version = "0.1.0"
+description = ""
+authors = ["yang-lin94 <casongg@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+grpcio = "^1.68.0"
+grpcio-tools = "^1.68.0"
+openai = "^1.54.5"
+aiohttp = "^3.11.6"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
