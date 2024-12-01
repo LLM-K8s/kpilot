@@ -1,0 +1,34 @@
+syntax = "proto3";
+package prompthub;
+
+message PromptMessage {
+  string Role = 1;
+  string Content = 2;
+}
+
+message InfoMessage {
+  string State = 1;
+}
+
+message PromptProcessingRequest {
+  string Mode = 1;
+  string Title = 2;
+  repeated PromptMessage Prompt = 3;
+  string Model = 4;
+  string Provider = 5;
+  int32 MaxTokens = 6;
+  float Temperature = 7;
+}
+
+message PromptProcessingResponse {
+  PromptMessage Result = 1;
+  InfoMessage Information = 2;
+  string Model = 3;
+  string Provider = 4;
+  int32 MaxTokens = 5;
+  float Temperature = 6;
+}
+
+service PromptHub {
+  rpc PromptProcessing (PromptProcessingRequest) returns (PromptProcessingResponse);
+}
